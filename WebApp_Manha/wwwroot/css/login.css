@@ -1,0 +1,70 @@
+﻿﻿html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #eeeeee !important;
+}
+
+.overflow {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+div#cardLogin {
+    min-width: 400px;
+    min-height: 400px;
+}
+
+header#headerPag {
+    min-height: 40px;
+}
+
+#corpoPag::-webkit-scrollbar {
+    width: 5px;
+    /* width of the entire scrollbar */
+}
+
+#corpoPag::-webkit-scrollbar-track {
+    background: #d6d6d6;
+    /* color of the tracking area */
+}
+
+#corpoPag::-webkit-scrollbar-thumb {
+    background-color: #0d6efd;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid d6d6d6;
+    /* creates padding around scroll thumb */
+}
+
+.bgLayoutHeader {
+    display: grid;
+    grid-template-areas: "sidebar main";
+    grid-template-columns: 250px 5fr;
+    gap: 5px;
+}
+
+header > .bg-primary {
+    /* background-color: #4dd4ac !important; */
+    color: white !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+nav#navPrincipal {
+    height: 400px !important;
+}
+
+label.form-label {
+    font-size: 13px !important;
+    margin-bottom: 3px !important;
+    margin-left: 5px !important;
+}
+
