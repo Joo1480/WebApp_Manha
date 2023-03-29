@@ -3,12 +3,37 @@
         <h2>Lista de Clientes</h2>
     </div>
     <div class="card-body">
+        <div class="row">
+            <div class="col-2">
+                <a href="/Clientes/Cadastro" class="btn btn-success">Novo Cliente</a>
+            </div>
+            <div class="col-3">
+                <select name="tipoBusca" class="form-select">
+                    <option value ="0">Todos os Campos</option>
+                    <option value ="id">Busca por id</option>
+                    <option value ="nome">Busca por Nome</option>
+                    <option value ="telefone">Busca por Telefone</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <input class="form-control" type="text" name="pesquisa"/>
+            </div>
+            <div class="col-3">
+                <button class="btn btn-info" type="submit">Pesquisar</button>
+            </div>
+        </div>
+
+
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Código</th>
                     <th>Nome</th>
                     <th>Telefone</th>
+                    <th>
+                        
+                    </th>
+
                 </tr>
             </thead>
             <tbody>
@@ -16,16 +41,31 @@
                     <td>1</td>
                     <td>João Elias</td>
                     <td>(16) 99417-0879</td>
+                    <td>
+                        <a href="/Clientes/Editar/1" class="btn btn-warning">Editar</a>
+                        <a href="/Clientes/Compras/1" class="btn btn-primary">Todas as Compras</a>
+                        <a href="/Clientes/Excluir/1" class="btn btn-danger">Excluir</a>
+                    </td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Samuel</td>
                     <td>(16) 99417-0879</td>
+                    <td>
+                        <a href="/Clientes/Editar/2" class="btn btn-warning">Editar</a>
+                        <a href="/Clientes/Compras/2" class="btn btn-primary">Todas as Compras</a>
+                        <a href="/Clientes/Excluir/2" class="btn btn-danger">Excluir</a>
+                    </td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>Thais</td>
                     <td>(16) 99417-0879</td>
+                    <td>
+                        <a href="/Clientes/Editar/3" class="btn btn-warning">Editar</a>
+                        <a href="/Clientes/Compras/3" class="btn btn-primary">Todas as Compras</a>
+                        <a href="/Clientes/Excluir/3" class="btn btn-danger">Excluir</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
