@@ -7,17 +7,20 @@ namespace WebApp_Manha.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly Contexto db; 
 
         //Construtor da Classe
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(Contexto db, ILogger<HomeController> logger)
         {
             _logger = logger;
+            this.db = db;
         }
 
         //Devolve uma tela HTML
         public IActionResult Index()
         {
-            return View();
+            var model = db.PRODUTOS.ToList();
+            return View(model);
         }
         //mais uma tela do sistema
         public IActionResult BemVindo()
