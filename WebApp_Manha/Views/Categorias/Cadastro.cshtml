@@ -1,0 +1,40 @@
+﻿@model WebApp_Manha.Models.CategoriasModel
+<div class="row">
+    <div class="col-4">
+    </div>
+    <div class="col-4">
+
+        @if (TempData["Erro"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Erro"]
+            </div>
+        }
+
+        <div class="card">
+            <div class="card-header">
+                Cadastro de Categorias
+            </div>
+            <div class="card-body">
+                <form action="/Categorias/SalvarDados" method="post">
+
+                    <label>Nome</label>
+                    <input type="text" name="Nome" class="form-control" />
+                    <br />
+
+                    <label>Ativo</label>
+                    <input type="checkbox" name="Ativo" class="form-check-input" checked />
+                    <br />
+
+                    <button type="submit" class=" btn btn-dark">
+                        Salvar Categoria
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-4">
+    </div>
+
+</div>
