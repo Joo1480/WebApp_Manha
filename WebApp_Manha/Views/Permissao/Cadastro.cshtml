@@ -1,12 +1,36 @@
 ﻿@model WebApp_Manha.Entidades.Permissao
+<div class="row">
+    <div class="col-4">
+    </div>
+    <div class="col-4">
 
-<form action="/Permissao/SalvarDados" method="post">
-    <input type="text" name="Descricao"/>
-    
-    <br/>
+        @if (TempData["Erro"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Erro"]
+            </div>
+        }
 
-    <button type="submit">
-        Salvar
-        </button>
+        <div class="card">
+            <div class="card-header">
+                Cadastro de Categorias
+            </div>
+            <div class="card-body">
+                <form action="/Permissao/SalvarDados" method="post">
 
-</form>
+                    <label>Descricao</label>
+                    <input type="text" name="Descricao" class="form-control" />
+                    <br />
+
+                    <button type="submit" class=" btn btn-dark">
+                        Salvar Permissão
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-4">
+    </div>
+
+</div>

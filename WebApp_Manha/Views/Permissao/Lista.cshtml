@@ -1,6 +1,55 @@
 ﻿@model List<WebApp_Manha.Entidades.Permissao>
+<div class="card">
+    <div class="card-header">
+        <h2>Lista de Permissão</h2>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-2">
+                <a href="/Permissao/Cadastro" class="btn btn-success">Nova Permissão</a>
+            </div>
+            <div class="col-3">
+                <select name="tipoBusca" class="form-select">
+                    <option value="0">Todos os Campos</option>
+                    <option value="id">Busca por id</option>
+                    <option value="nome">Busca por Nome</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <input class="form-control" type="text" name="pesquisa" />
+            </div>
+            <div class="col-3">
+                <button class="btn btn-info" type="submit">Pesquisar</button>
+            </div>
+        </div>
 
-    @foreach(var permissao in Model)
-    {
-        <p>@permissao.Id  -  @permissao.Descricao</p>
-    }
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descrição</th>
+                    <th>
+
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Descricao</td>
+                        <td>
+                            <a href="/Permissao/Editar/@item.Id" class="btn btn-warning">Editar</a>
+                            <a href="/Permissao/Excluir/@item.Id" class="btn btn-danger">Excluir</a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
