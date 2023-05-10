@@ -8,19 +8,21 @@
             <div class="col-2">
                 <a href="/Categorias/Cadastro" class="btn btn-success">Nova Categoria</a>
             </div>
-            <div class="col-3">
-                <select name="tipoBusca" class="form-select">
-                    <option value="0">Todos os Campos</option>
-                    <option value="id">Busca por id</option>
-                    <option value="nome">Busca por Nome</option>
-                </select>
-            </div>
+            <form action="/Categorias/Lista" method="get">
+            @*<div class="col-3">
+                    <select name="tipoBusca" class="form-select">
+                        <option value="0">Todos os Campos</option>
+                        <option value="id">Busca por id</option>
+                        <option value="nome">Busca por Nome</option>
+                    </select>
+            </div>*@
             <div class="col-4">
-                <input class="form-control" type="text" name="pesquisa" />
+                <input class="form-control" type="text" name="busca" />
             </div>
             <div class="col-3">
                 <button class="btn btn-info" type="submit">Pesquisar</button>
             </div>
+            </form>
         </div>
 
 
@@ -40,11 +42,20 @@
 
                 @foreach (var item in Model)
                 {
-                    var Ativo = item.Ativo == true ? "Ativo" : "Inativo";
+                    @*var Ativo = item.Ativo == true ? "Ativo" : "Inativo";*@
                     <tr>
                         <td>@item.Id</td>
                         <td>@item.Nome</td>
-                        <td>@Ativo</td>
+                        <td>@*@Ativo*@
+                            @if(item.Ativo)
+                            {
+                                <input type="checkbox" checked="checked" disabled>
+                            }else
+                            {
+                                <input type="checkbox" disabled>
+                            }
+
+                        </td>
                         <td>
                             <a href="/Categorias/Editar/@item.Id" class="btn btn-warning">Editar</a>
                             <a href="/Categorias/Excluir/@item.Id" class="btn btn-danger">Excluir</a>
