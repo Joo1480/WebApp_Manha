@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebApp_Manha.Entidades;
 using WebApp_Manha.Models;
 
@@ -15,7 +16,10 @@ namespace WebApp_Manha.Controllers
         
         public IActionResult Lista()
         {
-            return View(db.PRODUTOS.ToList());
+            List<Produtos> model = new List<Produtos>();
+            model = db.PRODUTOS.Include(x => x.CATEGORIA).ToList();
+
+            return View(model);
         }
         public IActionResult Cadastro()
         {
