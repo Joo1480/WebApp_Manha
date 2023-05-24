@@ -19,8 +19,7 @@ namespace WebApp_Manha.Controllers
         //Devolve uma tela HTML
         public IActionResult Index()
         {
-            var model = db.PRODUTOS.ToList();
-            return View(model);
+            return View();
         }
         //mais uma tela do sistema
         public IActionResult BemVindo()

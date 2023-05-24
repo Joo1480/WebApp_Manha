@@ -2,7 +2,7 @@
 
 namespace WebApp_Manha.Models
 {
-    public class NovoProdutoModel
+    public class NovoProdutoModel : Produtos
     {
         public NovoProdutoModel() 
         {

@@ -15,13 +15,14 @@ namespace WebApp_Manha.Controllers
         
         public IActionResult Lista()
         {
-            return View();
+            return View(db.PRODUTOS.ToList());
         }
         public IActionResult Cadastro()
         {
             NovoProdutoModel model = new NovoProdutoModel();
-            model.ListaCategorias = db.CATEGORIAS.ToList();
-            return View();
+            model.ListaCategorias = db.CATEGORIAS.Where(x=>x.Ativo == true).ToList();
+
+            return View(model);
         }
 
         [HttpPost]

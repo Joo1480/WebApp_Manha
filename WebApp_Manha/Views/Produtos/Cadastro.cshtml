@@ -1,1 +1,39 @@
-﻿
+﻿@model WebApp_Manha.Models.NovoProdutoModel
+
+<div class="row">
+    <div class="offset-md-4 col-md-4">
+        <div class="card">
+            <div class="card-header">
+                Cadastro de Produtos
+            </div>
+            <div class="card-body">
+                <form action="/Produtos/SalvarDados" method="post">
+                    <label>Descrição do Produto</label>      
+                    <input type="text" class="form-control" name="DESCRICAO"/>
+                    <br />
+                    <label>Valor</label>
+                    <input type="text" class="form-control" name="VALOR"/>
+                    <br />
+                    <label>Ativo</label>
+                    <select class="form-control" name="ATIVO">
+                        <option value="true">Ativo</option>
+                        <option value="false">Inativo</option>
+                    </select>
+                    <br />
+                    <label>Lista de Categorias</label>
+                    <select class="form-control" name="CATEGORIAID">
+                        <option value="0">Selecione uma categoria</option>
+                        @foreach (var categoria in Model.ListaCategorias)
+                        {
+                            <option value="@categoria.Id">@categoria.Nome</option>
+                        }
+                    </select>
+                    <br />
+                    <button type="submit" class="btn btn-success">
+                        Salvar Produto
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
